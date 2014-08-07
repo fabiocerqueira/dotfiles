@@ -10,3 +10,5 @@ source ~/.vim/mapping.vim
 source ~/.vim/happy.vim
 
 source ~/.vim/plugins.vim
+
+source ~/.vim/autocmds.vim

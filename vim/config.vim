@@ -7,9 +7,6 @@ set ruler
 set nu
 set mouse=a
 set nowrap
-set showmatch
-set showmode
-set showcmd
 set nobackup
 set encoding=utf-8
 set fileencoding=utf-8
@@ -33,3 +30,9 @@ set wildmenu
 set wildmode=list:longest
 set guioptions-=T
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" status
+set showmatch
+set showmode
+set showcmd
+set laststatus=2
+set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}

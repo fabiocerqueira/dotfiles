@@ -11,6 +11,10 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'tpope/vim-fugitive'
 " Color
 Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
