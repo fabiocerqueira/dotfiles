@@ -1,0 +1,12 @@
+" All of the plugins are installed with Vundle from this file.
+source ~/.vim/vundle.vim
+
+source ~/.vim/config.vim
+
+source ~/.vim/functions.vim
+
+source ~/.vim/mapping.vim
+
+source ~/.vim/happy.vim
+
+source ~/.vim/plugins.vim
