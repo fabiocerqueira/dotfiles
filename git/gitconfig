@@ -1,0 +1,20 @@
+[alias]
+	st = status
+	di = diff
+	co = checkout
+	ci = commit
+	br = branch
+	sta = stash
+	ld = log --decorate --graph
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[user]
+	name = Fábio Cerqueira
+	email = cerqueirasfabio@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = $HOME/dotfiles/git/gitignore_global
+[push]
+	default = simple
