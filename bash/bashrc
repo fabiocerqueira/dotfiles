@@ -1,0 +1,10 @@
+#configurando gerais no terminal
+DOTFILES=$HOME/dotfiles
+export GREP_OPTIONS='--color=auto'
+export CLICOLOR=1
+export SVN_EDITOR=vim
+
+source $DOTFILES/bash/alias.sh
+source $DOTFILES/bash/bash_completion
+source $DOTFILES/bash/prompt.sh
+
