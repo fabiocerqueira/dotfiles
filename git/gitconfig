@@ -15,7 +15,7 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = $HOME/dotfiles/git/gitignore_global
+	excludesfile = ~/dotfiles/git/gitignore_global
 	editor = /usr/bin/vim
 [push]
 	default = simple
