@@ -1,8 +1,13 @@
 #configurando gerais no terminal
+unamestr=`uname`
 DOTFILES=$HOME/dotfiles
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
 export SVN_EDITOR=vim
+
+if [[ "$unamestr" == 'Darwin' ]]; then
+    export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+fi
 
 source $DOTFILES/bash/alias.sh
 source $DOTFILES/bash/bash_completion.sh
