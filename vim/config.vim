@@ -1,7 +1,7 @@
 set title
 set titleold="Terminal"
 set titlestring=%F
-set colorcolumn=79
+"set colorcolumn=79
 set nowrap
 set nobackup
 set noswapfile
