@@ -5,6 +5,5 @@ export CLICOLOR=1
 export SVN_EDITOR=vim
 
 source $DOTFILES/bash/alias.sh
-source $DOTFILES/bash/bash_completion
+source $DOTFILES/bash/bash_completion.sh
 source $DOTFILES/bash/prompt.sh
-

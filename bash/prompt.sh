@@ -34,29 +34,10 @@ function parse_git_branch {
         echo "[${branch}]${remote}${state}"
     fi
 }
-function svn_parser {
-    if [[ $(ls -al | grep "svn" | wc -l) == 1 ]]; then
-        svn_status="$(svn status 2> /dev/null)";
-        if [[ ${svn_status} != "" ]]; then
-            state="${RED}⚡"
-        fi
-        echo "[svn${state}${GREEN}]";
-    fi
-}
-
-function hg_parser {
-    branch=$(hg branch 2> /dev/null);
-    if [[ ${branch} != "" ]]; then
-        if [[ $(hg st) != "" ]]; then
-            state="${RED}⚡"
-        fi
-        echo "[${branch}${state}${GREEN}]"
-    fi
-}
 
 function prompt_func() {
     previous_return_value=$?;
-    prompt="\u@\h:\W${GREEN}$(parse_git_branch)" #$(svn_parser)$(hg_parser)"
+    prompt="\u@\h:\W${GREEN}$(parse_git_branch)"
     venv=""
     if [[ -n "$VIRTUAL_ENV" ]]; then
         venv="$(basename $VIRTUAL_ENV)"
