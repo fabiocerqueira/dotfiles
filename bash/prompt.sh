@@ -15,19 +15,19 @@ function parse_git_branch {
     remote_pattern="Your branch is (behind|ahead)"
     diverge_pattern="Your branch and (.*) have diverged"
     if [[ ! ${git_status}} =~ "working directory clean" ]]; then
-        state=" 🔥  "
+        state="${RED}*"
     fi
     # add an else if or two here if you want to get more specific
     if [[ ${git_status} =~ ${remote_pattern} ]]; then
         term_time=${BASH_REMATCH[1]}
         if [[ ${term_time} == "ahead" ]]; then
-            remote="🔺 "
+            remote="${YELLOW}↑"
         elif [[ ${term_time} == "behind" ]]; then
-            remote="🔻 "
+            remote="${YELLOW}↓"
         fi
     fi
     if [[ ${git_status} =~ ${diverge_pattern} ]]; then
-        remote="♦️ "
+        remote="${YELLOW}↕"
     fi
     if [[ ${git_status} =~ ${branch_pattern} ]]; then
         branch=${BASH_REMATCH[1]}
@@ -47,9 +47,9 @@ function prompt_func() {
     fi
     if test $previous_return_value -eq 0
     then
-        PS1=" 🍺  ${venv}${prompt}${COLOR_NONE}$ "
+        PS1="${venv}${prompt}${COLOR_NONE}$ "
     else
-        PS1=" 🍺  ${venv}${prompt}${RED}${COLOR_NONE}$ "
+        PS1="${venv}${prompt}${RED}${COLOR_NONE}$ "
     fi
 }
 
