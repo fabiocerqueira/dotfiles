@@ -1,15 +1,12 @@
-syntax on
-set bg=dark
-colorscheme gruvbox
-" set colorcolumn=80
 set title
 set titleold="Terminal"
 set titlestring=%F
-set ruler
-set nu
-set mouse=a
+set colorcolumn=79
 set nowrap
 set nobackup
+set noswapfile
+set fileformats=unix,dos,mac
+set backspace=indent,eol,start
 set encoding=utf-8
 set fileencoding=utf-8
 set autochdir
@@ -38,3 +35,42 @@ set showmode
 set showcmd
 set laststatus=2
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
+" Cursor
+set gcr=a:blinkon0
+set scrolloff=3
+"*****************************************************************************
+"" Visual Settigns
+"*****************************************************************************
+syntax on
+set bg=dark
+colorscheme gruvbox
+set ruler
+set number
+
+let no_buffers_menu=1
+set mousemodel=popup
+set mouse=a
+set t_Co=256
+set guioptions=egmrt
+set gfn=Monospace\ 8
+
+if has("gui_running")
+  if has("gui_mac") || has("gui_macvim")
+    set guifont=Menlo:h12
+    set transparency=7
+  endif
+else
+  let g:CSApprox_loaded = 1
+
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+  else
+    if $TERM == 'xterm'
+      set term=xterm-256color
+    endif
+  endif
+endif
+
+if &term =~ '256color'
+  set t_ut=
+endif
