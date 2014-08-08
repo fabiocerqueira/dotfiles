@@ -1,9 +1,5 @@
 #!/bin/bash
 #alias
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias ll="ls -l"
 alias df="df -kh"
 alias du="du -kc"
@@ -48,4 +44,8 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias oo=open
     alias localip="ifconfig eth0 | grep -o 'addr:\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)' | sed -e 's/addr://'"
     alias ips="ifconfig -a | grep -o 'addr:\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)' | sed -e 's/addr://'"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
