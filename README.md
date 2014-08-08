@@ -9,6 +9,7 @@ dotfiles
 - make
 - bash_completion
 - ctags
+- flake8 (optional)
 
 
 # Installation:
