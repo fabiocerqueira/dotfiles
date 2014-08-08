@@ -7,6 +7,18 @@ export SVN_EDITOR=vim
 
 if [[ "$unamestr" == 'Darwin' ]]; then
     export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+    if [ -f /usr/local/opt/autoenv/activate.sh ]; then
+        . /usr/local/opt/autoenv/activate.sh
+    fi
+fi
+if [[ "$unamestr" == 'Linux' ]]; then
+    export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+    if [ -f /usr/share/autojump/autojump.sh ]; then
+       . /usr/share/autojump/autojump.sh
+    fi
+    if [ -f /usr/local/bin/activate.sh ]; then
+        . /usr/local/bin/activate.sh
+    fi
 fi
 
 source $DOTFILES/bash/alias.sh
