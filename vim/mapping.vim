@@ -19,3 +19,7 @@ map <C-K> <C-W>W
 " ,u -> uncomment selected
 noremap <silent> ,c :s,^,<C-R>=comment<CR>,<CR>:noh<CR>
 noremap <silent> ,u :s,^\V<C-R>=comment<CR>,,e<CR>:noh<CR>
+"" Copy/Paste/Cut
+noremap YY "+y<CR>
+noremap P "+gP<CR>
+noremap XX "+x<CR>

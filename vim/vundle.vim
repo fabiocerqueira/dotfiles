@@ -15,6 +15,10 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'davidhalter/jedi-vim'
 " Color
 Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line

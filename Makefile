@@ -5,7 +5,7 @@ ifeq ($(OS),Darwin)
 	BASH_COMPLETION_D = $(shell brew --prefix)/etc/bash_completion.d
 endif
 ifeq ($(OS),Linux)
- 	BASH_COMPLETION_D = '/etc/bash_completion.d'
+	BASH_COMPLETION_D = '/etc/bash_completion.d'
 	SUDO = 'sudo'
 endif
 

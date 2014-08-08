@@ -8,7 +8,7 @@ dotfiles
 - vim
 - make
 - bash_completion
-    
+- ctags
 
 
 # Installation:

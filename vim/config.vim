@@ -3,6 +3,8 @@ set bg=dark
 colorscheme gruvbox
 " set colorcolumn=80
 set title
+set titleold="Terminal"
+set titlestring=%F
 set ruler
 set nu
 set mouse=a
