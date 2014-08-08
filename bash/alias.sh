@@ -32,3 +32,16 @@ if [[ "$unamestr" == 'Darwin' ]]; then
     alias o="open"
     alias oo="open ."
 fi
+if [[ "$unamestr" == 'Linux' ]]; then
+    function open() {
+        if [ -z "$1" ]; then
+            xdg-open . &> /dev/null &
+        else
+            xdg-open $1 &> /dev/null &
+        fi
+    }
+    alias o=open
+    alias oo=open
+    alias localip="ifconfig eth0 | grep -o 'addr:\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)' | sed -e 's/addr://'"
+    alias ips="ifconfig -a | grep -o 'addr:\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)' | sed -e 's/addr://'"
+fi
