@@ -23,3 +23,6 @@ noremap <silent> ,u :s,^\V<C-R>=comment<CR>,,e<CR>:noh<CR>
 noremap YY "+y<CR>
 noremap P "+gP<CR>
 noremap XX "+x<CR>
+" pbcopy for OSX copy/paste
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
