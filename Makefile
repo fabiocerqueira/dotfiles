@@ -22,7 +22,6 @@ install-bash:
 	ln -s `pwd`/bash/bashrc ~/.bashrc
 	@for i in $(BASH_COMPLETIONS); do if [ -f $(BASH_COMPLETION_D)/$$(basename $$i) ]; then $(SUDO) rm $(BASH_COMPLETION_D)/$$(basename $$i); fi done
 	@for i in $(BASH_COMPLETIONS); do $(SUDO) ln -s $$i $(BASH_COMPLETION_D); done
-	. ~/.bashrc
 
 install-git:
 	rm -f ~/.gitconfig
