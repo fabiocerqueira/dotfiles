@@ -7,19 +7,30 @@ export SVN_EDITOR=vim
 
 if [[ "$unamestr" == 'Darwin' ]]; then
     export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+    # autojump
+    [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+    # autoenv
     if [ -f /usr/local/opt/autoenv/activate.sh ]; then
         . /usr/local/opt/autoenv/activate.sh
     fi
 fi
 if [[ "$unamestr" == 'Linux' ]]; then
     export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+    # autojump
     if [ -f /usr/share/autojump/autojump.sh ]; then
        . /usr/share/autojump/autojump.sh
     fi
+    # autoenv
     if [ -f /usr/local/bin/activate.sh ]; then
         . /usr/local/bin/activate.sh
     fi
 fi
+
+# startup virtualenv-burrito
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+. $HOME/.venvburrito/startup.sh
+fi
+
 
 source $DOTFILES/bash/alias.sh
 source $DOTFILES/bash/bash_completion.sh
