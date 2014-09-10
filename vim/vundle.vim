@@ -20,6 +20,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
 " Color
 Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
