@@ -12,3 +12,8 @@ source ~/.vim/happy.vim
 source ~/.vim/plugins.vim
 
 source ~/.vim/autocmds.vim
+
+"" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
