@@ -1,12 +1,13 @@
 #configurando gerais no terminal
 unamestr=`uname`
 DOTFILES=$HOME/dotfiles
+export PATH=~/.local/bin:$PATH
+export PATH=$DOTFILES/scripts:$PATH
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
 export SVN_EDITOR=vim
 
 if [[ "$unamestr" == 'Darwin' ]]; then
-    export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
     # autojump
     [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
     # autoenv
@@ -15,7 +16,6 @@ if [[ "$unamestr" == 'Darwin' ]]; then
     fi
 fi
 if [[ "$unamestr" == 'Linux' ]]; then
-    export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
     # autojump
     if [ -f /usr/share/autojump/autojump.sh ]; then
        . /usr/share/autojump/autojump.sh
@@ -35,3 +35,7 @@ fi
 source $DOTFILES/bash/alias.sh
 source $DOTFILES/bash/bash_completion.sh
 source $DOTFILES/bash/prompt.sh
+
+if [ -f $HOME/.bashrc.local ]; then
+. $HOME/.bashrc.local
+fi

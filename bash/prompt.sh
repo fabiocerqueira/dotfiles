@@ -15,7 +15,7 @@ function parse_git_branch {
     remote_pattern="Your branch is (behind|ahead)"
     diverge_pattern="Your branch and (.*) have diverged"
     if [[ ! ${git_status}} =~ "working directory clean" ]]; then
-        state="${RED}*"
+        state="${RED}●"
     fi
     # add an else if or two here if you want to get more specific
     if [[ ${git_status} =~ ${remote_pattern} ]]; then
@@ -31,26 +31,27 @@ function parse_git_branch {
     fi
     if [[ ${git_status} =~ ${branch_pattern} ]]; then
         branch=${BASH_REMATCH[1]}
-        echo "[${branch}]${remote}${state}"
+        echo "${COLOR_NONE}(${BLUE}${branch}${remote}${state}${COLOR_NONE})"
     fi
 }
 
 function prompt_func() {
     previous_return_value=$?;
-    prompt="\u@\h:\W${GREEN}$(parse_git_branch)"
-    venv=""
+    prompt="\u@\h:\w] $(parse_git_branch)\n"
+    venv="["
     if [[ -n "$VIRTUAL_ENV" ]]; then
         venv="$(basename $VIRTUAL_ENV)"
     fi
-    if [[ $venv != "" ]]; then
-        venv="(${venv})"
+    if [[ $venv != "[" ]]; then
+        venv="[${venv} - "
     fi
     if test $previous_return_value -eq 0
     then
-        PS1="${venv}${prompt}${COLOR_NONE}$ "
+        PS1="${LIGHT_GRAY}┌─ ${COLOR_NONE}${venv}${prompt}${LIGHT_GRAY}└─ ${COLOR_NONE}"
     else
-        PS1="${venv}${prompt}${RED}${COLOR_NONE}$ "
+        PS1="${LIGHT_GRAY}┌─ ${COLOR_NONE}${venv}${prompt}${RED}${LIGHT_GRAY}└─ ${COLOR_NONE}"
     fi
 }
 
-export PROMPT_COMMAND="prompt_func"
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} prompt_func"
+
