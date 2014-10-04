@@ -11,7 +11,7 @@ alias zen="python -c \"import this\""
 alias targzc='tar -zcvf'
 alias targzd='tar -zxvf'
 #rmpyc
-alias rmpyc='find . -name "*.pyc" -delete'
+alias rmpyc='find . -name __pycache__ -delete -or -iname *.py[co] -delete'
 #pyc
 alias pysmtp='sudo echo running... && sudo python -m smtpd -n -c DebuggingServer localhost:25'
 alias ..="cd .."
