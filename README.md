@@ -2,7 +2,7 @@ dotfiles
 --------
 
 
-# Dependences
+# Dependencies
 
 - git
 - vim
