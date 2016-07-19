@@ -11,7 +11,7 @@ alias zen="python -c \"import this\""
 alias targzc='tar -zcvf'
 alias targzd='tar -zxvf'
 #rmpyc
-alias rmpyc='find . -name __pycache__ -delete -or -iname *.py[co] -delete'
+alias rmpyc='find . -name __pycache__ -delete -or -iname "*.py[co]" -delete'
 #pyc
 alias pysmtp='sudo echo running... && sudo python -m smtpd -n -c DebuggingServer localhost:25'
 alias ..="cd .."
@@ -20,6 +20,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias h="honcho run"
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then

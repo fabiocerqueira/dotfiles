@@ -7,7 +7,7 @@ au BufNewFile,BufRead Makefile,makefile set ts=4 sw=4 noet
 au FileType c set ts=4 sw=4 noet
 au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.fcgi,*.wsgi set filetype=python
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=99
     \ formatoptions+=croq softtabstop=4 smartindent
     \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au FileType python set ft=python.django " For SnipMate
