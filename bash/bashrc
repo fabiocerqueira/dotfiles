@@ -8,7 +8,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$DOTFILES/scripts:$PATH
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
-export SVN_EDITOR=vim
+export EDITOR=vim
 
 if [[ "$unamestr" == 'Darwin' ]]; then
     # autojump
