@@ -8,8 +8,9 @@
 	ld = log --decorate --graph
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [user]
-	name = Fábio Cerqueira
-	email = cerqueirasfabio@gmail.com
+	name = Fabio Cerqueira
+	email = fabio@cerqueira.me
+	signingkey = 071392F3A0EC8E06
 [color]
 	diff = auto
 	status = auto
@@ -19,3 +20,5 @@
 	editor = /usr/bin/vim
 [push]
 	default = current
+[commit]
+	gpgsign = true
