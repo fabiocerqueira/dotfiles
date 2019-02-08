@@ -18,6 +18,7 @@ let g:airline#extensions#ctrlp#color_template = 'replace'
 let g:airline_enable_syntastic = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline_theme='onedark'
 
 " syntastic
 let g:syntastic_always_populate_loc_list=1

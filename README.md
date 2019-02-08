@@ -10,6 +10,9 @@ dotfiles
 - bash_completion
 - ctags
 - flake8 (optional)
+- powerline-go
+- i3
+- tmux
 
 
 # Installation:
