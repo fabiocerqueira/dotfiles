@@ -7,3 +7,6 @@
 [submodule "i3lock-multimonitor"]
 	path = i3lock-multimonitor
 	url = git@github.com:ShikherVerma/i3lock-multimonitor.git
+[submodule "tmux-themepack"]
+	path = tmux-themepack
+	url = git@github.com:jimeh/tmux-themepack.git
