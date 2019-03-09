@@ -9,7 +9,7 @@ ifeq ($(OS),Linux)
 	SUDO = 'sudo'
 endif
 
-install: install-vim install-bash install-git
+install: install-vim install-bash install-git install-tmux
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -26,3 +26,12 @@ install-bash:
 install-git:
 	rm -f ~/.gitconfig
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
+
+install-tmux:
+	rm -rf ~/.tmux.conf ~/.tmux.conf.local ~/.tmux-themepack
+	ln -s `pwd`/tmux.conf ~/.tmux.conf
+	ln -s `pwd`/tmux.conf.local ~/.tmux.conf.local
+	ln -s `pwd`/tmux-themepack ~/.tmux-themepack
+	tmux source-file ~/.tmux.conf
+
+
