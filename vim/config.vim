@@ -38,6 +38,8 @@ set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 " Cursor
 set gcr=a:blinkon0
 set scrolloff=3
+" No beep
+set noeb vb t_vb=
 "*****************************************************************************
 "" Visual Settigns
 "*****************************************************************************
@@ -53,24 +55,3 @@ set mouse=a
 set t_Co=256
 set guioptions=egmrt
 set gfn=Monospace\ 8
-
-if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
-
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
-endif
-
-if &term =~ '256color'
-  set t_ut=
-endif

@@ -4,6 +4,7 @@ alias ll="ls -l"
 alias df="df -kh"
 alias du="du -kc"
 alias lvim='vim -c "normal '\''0"'
+alias catpdf="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
 alias md5sum="openssl dgst -md5"
 alias qmd5="python -c \"import hashlib;import sys; print hashlib.md5(''.join(sys.argv[1:])).hexdigest()\""
 alias zen="python -c \"import this\""
@@ -21,6 +22,10 @@ alias .....="cd ../../../.."
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias h="honcho run"
+# fix came
+alias fixcam="sudo killall AppleCameraAssistant;sudo killall VDCAssistant"
+
+
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
@@ -50,3 +55,11 @@ if [[ "$unamestr" == 'Linux' ]]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+conda_workon() {
+    source ~/anaconda3/envs/$1/bin/activate $1
+}
+alias conda_workon=conda_workon
+alias gnib="curl 'https://burghquayregistrationoffice.inis.gov.ie/Website/AMSREG/AMSRegWeb.nsf/(getAppsNear)?openpage&cat=Study&sbcat=All&typ=Renewal'"
+alias gnibw="curl 'https://burghquayregistrationoffice.inis.gov.ie/Website/AMSREG/AMSRegWeb.nsf/(getAppsNear)?openpage&cat=Work&sbcat=All&typ=Renewal'"
+alias gnibf="curl 'https://burghquayregistrationoffice.inis.gov.ie/Website/AMSREG/AMSRegWeb.nsf/(getAppsNear)?openpage&cat=Other&sbcat=All&typ=Renewal'"
